@@ -1,0 +1,48 @@
+@use "../../index.scss";
+
+.Footer {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    padding: 20px 0px;
+    background: index.$red100;
+    * {
+        color: white;
+    }
+    .container {
+        width: 1300px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        h2 {
+            font-size: 24px;
+            width: fit-content;
+        }
+        .description {
+            font-size: 16px;
+            max-width: 600px;
+            line-height: 1.5;
+            input {
+                border: 1px solid rgba(0, 0, 0, .5);
+            }
+        }
+        .social__medias {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            img {
+                cursor: pointer;
+                width: 25px;
+                aspect-ratio: 1 / 1;
+            }
+        }
+    }
+    @media (max-width: 1350px) {
+        .container {
+            width: 95%;
+        }
+    }
+}

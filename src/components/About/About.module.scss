@@ -1,0 +1,41 @@
+.About {
+    width: 100%;
+    margin-top: calc(100vh - 104px + 80px);
+    display: flex;
+    justify-content: center;
+    .container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 1300px;
+        h2 {
+            width: fit-content;
+            font-size: 48px;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: "";
+                width: 50px;
+                height: 5px;
+                background: red;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -20px;
+            }
+        }
+        .description {
+            font-size: 20px;
+            margin-top: 40px;
+            line-height: 1.5;
+        }
+        .for_slider {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    @media (max-width: 1350px) {
+        .container {
+            width: 95%;
+        }
+    }
+}

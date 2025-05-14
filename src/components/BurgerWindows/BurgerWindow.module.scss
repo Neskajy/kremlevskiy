@@ -1,0 +1,43 @@
+@use "../../index.scss";
+
+.BurgerWindow {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: flex;
+    left: -100%;
+    transition: .3s ease-in-out all;
+    justify-content: center;
+    align-items: center;
+    background: index.$red100;
+
+    z-index: 20;
+    .container {
+        width: 95%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 20px 0px;
+        .nav {
+            .ul {
+                gap: 30px;
+                display: flex;
+                flex-direction: column;
+                li {
+                    text-align: right;
+                    font-size: 24px;
+                    cursor: pointer;
+                    color: white;
+                    &.active {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+    &.active {
+        left: 0;
+        transition: .3s ease-in-out all;
+    }
+}

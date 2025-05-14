@@ -1,0 +1,30 @@
+@use "../../index.scss";
+
+.Catalog {
+    display: flex;
+    justify-content: center;
+    .container {
+        width: 1300px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        h2 {
+            @include index.h2();
+        }
+        .Cards {
+            margin-top: 55px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-gap: 20px;
+            @media (max-width: 800px) {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+    }
+    @media (max-width: 1350px) {
+        .container {
+            width: 95%;
+        }
+    }
+}

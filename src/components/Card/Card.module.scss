@@ -1,0 +1,54 @@
+@use "../../index.scss";
+
+.Card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .img {
+        width: 100%;
+        img {
+            width: 100%;
+            aspect-ratio: 576 / 432;
+        }
+    }
+    .container {
+        margin-top: 10px;
+        width: 95%;
+        .name {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .composition {
+            line-height: 1.5;
+            font-size: 18px;
+            color: rgb(90, 90, 90);
+        }
+        
+        
+        .money {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            .btnAddToBasket {
+                padding: 10px 25px;
+                background: index.$red100;
+                color: white;
+                font-weight: 700;
+            }
+            .cost {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                * {
+                    font-weight: 500;
+                    font-size: 24px;
+                }
+                .int {
+                }
+            }
+        }
+    }
+}

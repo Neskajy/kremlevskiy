@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Перебираем все элементы в текущей директории
+for folder in */; do
+  # Проверяем, что это директория (а не файл)
+  if [[ -d "$folder" ]]; then
+    # Извлекаем имя папки без завершающего слэша
+    folder_name="${folder%/}"
+
+    # Создаем файлы внутри папки
+    touch "${folder}${folder_name}.jsx"
+    touch "${folder}${folder_name}.module.scss"
+
+    echo "Созданы файлы в папке: $folder_name"
+  fi
+done

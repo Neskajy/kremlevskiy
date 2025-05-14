@@ -1,0 +1,106 @@
+@use "../../index.scss";
+
+
+
+.Header {
+    background: rgba(42, 55, 75, .17);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgb(255, 255, 255, .3);
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 21;
+
+    &.no__background {
+        background: index.$red100;
+    }
+    
+    .container {
+        width: 1300px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0px;
+        
+        .nav {
+            .ul {
+                gap: 30px;
+                display: flex;
+                li {
+                    font-size: 20px;
+                    color: white;
+                }
+            }
+        }
+        .burgerButton {
+            display: none;
+            position: relative;
+            $burgerWidth: 30px;
+            width: $burgerWidth;
+            cursor: pointer;
+            aspect-ratio: 1 / 1;
+            .inner {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                .top, .center, .bottom {
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background: white;
+                    transition: .3s ease-in-out all;
+                    left: 0;
+                }
+                .top {
+                    transform-origin: left top;
+                    top: calc($burgerWidth / 6);
+                }
+                .center {
+                    top: calc($burgerWidth / 2);
+                }
+                .bottom {
+                    top: calc(5 * $burgerWidth / 6);
+                    transform-origin: left bottom; 
+                }
+            }
+            &.active {
+                .inner {
+                    .top, .center, .bottom {
+                        transition: .3s ease-in-out all;
+                        background: white;
+                    }
+                    .center {
+                        opacity: 0;
+                    }
+                    .top {
+                        transform: rotate(45deg);
+                    }
+                    .bottom {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+        @media (max-width: 900px) {
+            .burgerButton {
+                display: flex;
+            }
+            .nav {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 1350px) {
+    .Header {
+        .container {
+            width: 95%;
+            .nav {
+
+            }
+        }
+    }
+}

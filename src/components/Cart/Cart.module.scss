@@ -1,0 +1,12 @@
+.Cart {
+    display: flex;
+    justify-content: center;
+    .container {
+        width: 1300px;
+    }
+    @media (max-width: 1350px) {
+        .container {
+            width: 95%;
+        }
+    }
+}
