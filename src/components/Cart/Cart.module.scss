@@ -1,7 +1,6 @@
 @use "../../index.scss";
 
 .Cart {
-    margin-top: 60px;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -9,71 +8,81 @@
         width: 1300px;
         min-height: 65vh;
         display: flex;
-        gap: 50px;
-        justify-content: space-between;
-        &.empty {
+        flex-direction: column;
+        align-items: center;
+        h2 {
+            @include index.h2();
+        }
+        .container__inner {
+            margin-top: 60px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            h2 {
-                @include index.h2();
-                &::after {
-                    background: none;
+            gap: 50px;
+            width: 100%;
+            justify-content: space-between;
+            &.empty {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h2 {
+                    @include index.h2();
+                    &::after {
+                        background: none;
+                    }
                 }
             }
-        }
-        .cards {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-        .products__status {
-            width: 300px;
-            height: 245px;
-            box-sizing: border-box;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, .15);
-            
-            h4 {
-                white-space: nowrap;
-            }
-            
-            .order {
-                background: index.$red100;
-                color: white;
-                font-weight: 700;
-                padding: 10px;
-            }
-            .stat {
+            .cards {
                 display: flex;
                 flex-direction: column;
-                gap: 20px;
-                * {
-                    // color: index.$black;
-                }
-                .stat__item {
-                    span {
-                        white-space: nowrap;
-                    }
-                    display: flex;
-                    gap: 4px;
-                    align-items: center;
-                    .count {
-                        display: flex;
-                        align-items: center;
-                        gap: 4px;
-                    }
-                }
-            }
-
-        }
-        @media (max-width: 900px) {
-            flex-direction: column;
-            .products__status {
                 width: 100%;
+            }
+            .products__status {
+                width: 300px;
+                height: 245px;
+                box-sizing: border-box;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, .15);
+                
+                h4 {
+                    white-space: nowrap;
+                }
+                
+                .order {
+                    background: index.$red100;
+                    color: white;
+                    font-weight: 700;
+                    padding: 10px;
+                }
+                .stat {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    * {
+                        // color: index.$black;
+                    }
+                    .stat__item {
+                        span {
+                            white-space: nowrap;
+                        }
+                        display: flex;
+                        gap: 4px;
+                        align-items: center;
+                        .count {
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                        }
+                    }
+                }
+    
+            }
+            @media (max-width: 900px) {
+                flex-direction: column;
+                .products__status {
+                    width: 100%;
+                }
             }
         }
     }

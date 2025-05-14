@@ -18,13 +18,13 @@ export default function Slider() {
     const dotsRef = useRef(null);
 
     const slides = [
-        <div className={s.slide}>
+        <div className={s.slide} key="1">
             <img src={p1} alt="" />
         </div>,
-        <div className={s.slide}>
+        <div className={s.slide} key="2">
             <img src={p2} alt="" />
         </div>,
-        <div className={s.slide}>
+        <div className={s.slide} key="3">
             <img src={p3} alt="" />
         </div>,
     ];
@@ -34,7 +34,6 @@ export default function Slider() {
 
     function forward() {
         let newIndex
-        console.log(`${slidesCount} - 1 > ${slideIndex}`)
         if (slidesCount - 1 > slideIndex) {
             newIndex = slideIndex + 1;
         } else {

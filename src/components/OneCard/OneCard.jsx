@@ -2,9 +2,13 @@ import s from "./OneCard.module.scss";
 import { Link, useParams } from "react-router-dom";
 import left__icon from "../../assets/vectors/backward__icon.svg";
 import { Cards } from "../../server__response/cards";
+import { cartContext } from "../../contexts/context";
+import { useContext } from "react";
 
 export default function OneCard() {
     const {id} = useParams();
+
+    const {cart, setCart} = useContext(cartContext);
 
     const card = Cards.find((props_element) => props_element.id == id );
 

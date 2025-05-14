@@ -20,13 +20,9 @@ export default function Catalog() {
                     <Search searchChange={searchChange}/>
                     <div className={s.Cards}>
                         {
-                            filteredCards.map((card) => {
-                                return (
-                                    <>
-                                        <Card card={card}/>
-                                    </>
-                                )
-                            })
+                            filteredCards.map((card) => 
+                                <Card key={card.id} card={card}/>
+                            )
                         }
                     </div>
                 </div>

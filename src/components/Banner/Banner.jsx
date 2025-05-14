@@ -18,7 +18,7 @@ export default function Banner() {
                         Элитный ресторан в центре города Москвы
                     </div>
                     <div className={s.buttons}>
-                        <Link to="/">
+                        <Link to="/catalog">
                             <button className={s.btnToBasket}>
                                 Заказать
                                 <img src={ Cart_icon } alt="" />

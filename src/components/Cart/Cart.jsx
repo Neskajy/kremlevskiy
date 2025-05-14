@@ -42,10 +42,13 @@ export default function Cart() {
                 (
                     <div className={s.Cart}>
                         <div className={s.container}>
+                            <h2>Корзина</h2>
+                            <div className={s.container__inner}>
+
                             <div className={s.cards}>
                                 {
                                     cart.map((card) => {
-                                        return <CardForCart card={card}/>
+                                        return <CardForCart key={card.id} card={card}/>
                                     })
                                 }
                             </div>
@@ -70,6 +73,7 @@ export default function Cart() {
                                 <button className={s.order}>
                                     Заказать
                                 </button>
+                            </div>
                             </div>
                         </div>
                     </div>
