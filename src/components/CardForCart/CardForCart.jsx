@@ -1,17 +1,31 @@
 import s from "./CardForCart.module.scss";
 import { cartContext } from "../../contexts/context";
+import { useContext } from "react";
 
 export default function CardForCart({card}) {
 
     const {cart, setCart} = useContext(cartContext);
 
     function countIncrement() {
-        const newCard = [...card];
-        newCard.count += 1;
+        setCart(cart.map((cart_element) => 
+            cart_element.id === card.id
+                ? {...cart_element, count: cart_element.count + 1}
+                : cart_element
+        ));
+    }
 
-        const newCart = [...cart];
-        newCart.remove(card);
-        newCart.push(newCard);
+    function decrementElement() {
+        setCart(cart.map((cart_element) => 
+            cart_element.id === card.id
+            ? cart_element.count > 1 ? {...cart_element, count: cart_element.count - 1} : cart_element
+            : cart_element
+        ));
+    }
+
+    function deleteElement() {
+        setCart(cart.filter((cart_element) =>
+            cart_element.id !== card.id
+        ))
     }
 
     return (
@@ -28,7 +42,7 @@ export default function CardForCart({card}) {
                     </div>
                     <div className={s.right__info}>
                         <div className={s.count}>
-                            <div className={s.minus}>-</div>
+                            <div className={s.minus} onClick={decrementElement}>-</div>
                             <div className={s.status}>
                                 <div className={s.count}>
                                     {card.count}
@@ -37,9 +51,9 @@ export default function CardForCart({card}) {
                                     шт
                                 </div>
                             </div>
-                            <div className={s.plus}>+</div>
+                            <div className={s.plus} onClick={countIncrement}>+</div>
                         </div>
-                        <button className={s.btnDelete}>
+                        <button className={s.btnDelete} onClick={deleteElement}>
                             Удалить
                         </button>
                     </div>

@@ -8,7 +8,6 @@ export default function BurgerWindow() {
         
     function handleClick() {
         setIsActiveBurger(!isActiveBurger);
-        console.log(isActiveBurger)
     }
     return (
         <>
@@ -16,17 +15,17 @@ export default function BurgerWindow() {
                 <div className={s.container}>
                     <nav className={s.nav}>
                         <ul className={s.ul}>
-                        <li>
+                            <li>
                                 <Link to="/">Главная</Link>
                             </li>
                             <li>
-                                <Link to="/catalog">Каталог</Link>
+                                <Link to="/catalog">Доставка</Link>
                             </li>
                             <li>
                                 <Link to="/cart">Корзина</Link>
                             </li>
                             <li>
-                                <Link to="/contacts">Контакты</Link>
+                                <Link to="/">Контакты</Link>
                             </li>
                         </ul>
                     </nav>

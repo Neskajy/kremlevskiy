@@ -63,7 +63,7 @@ export default function Contacts() {
                             </div>
                         </div>
                         <div className={s.map}>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.118422160461!2d37.613258626441116!3d55.756445016892165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5aafc97525%3A0xe1efac947d4ea4dc!2z0JPRgNCw0L3QtCDQmtCw0YTQtSBEci4g0JbQuNCy0LDQs9C-!5e0!3m2!1sru!2sru!4v1746990783838!5m2!1sru!2sru" width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.118422160461!2d37.613258626441116!3d55.756445016892165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5aafc97525%3A0xe1efac947d4ea4dc!2z0JPRgNCw0L3QtCDQmtCw0YTQtSBEci4g0JbQuNCy0LDQs9C-!5e0!3m2!1sru!2sru!4v1746990783838!5m2!1sru!2sru" width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>

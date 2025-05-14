@@ -1,5 +1,5 @@
 import s from "./Slider.module.scss";
-import { useState, useRef, createElement } from "react";
+import { useState, useRef, createElement, useEffect } from "react";
 import forward__icon from "../../assets/vectors/forward__icon.svg";
 import backward__icon from "../../assets/vectors/backward__icon.svg";
 
@@ -62,6 +62,16 @@ export default function Slider() {
             galleryRef.current.style.transform = `translateX(${offSet}%)`;
         }
     }
+
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            forward();
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [slideIndex, slidesCount]);
+
 
 
     return (

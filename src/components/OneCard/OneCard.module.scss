@@ -1,0 +1,140 @@
+@use "../../index.scss";
+
+.OneCard {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+    min-height: 65vh;
+}
+
+
+.container {
+    display: flex;
+    width: 1300px;
+    flex-direction: column;
+    position: relative;
+    gap: 26px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+.product__info {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    
+    .img {
+        width: 60%;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+@media (max-width: 1350px) {
+    .container {
+        width: 95%;
+    }
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 40%;
+}
+
+.purchase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+}
+
+a {
+    width: fit-content;
+    height: fit-content;
+    .btn3 {
+        background: white;
+        position: relative;
+        padding: 5px 15px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        gap: 10px;
+        img {
+            height: 18px;
+        }
+        $side_lenght: 20px;
+        &::before {
+            z-index: -1;
+            left: -5px;
+            top: -5px;
+            content: "";
+            position: absolute;
+            width: $side_lenght;
+            height: $side_lenght;
+            background: index.$wine;
+        }
+        &::after {
+            z-index: -1;
+            right: -5px;
+            bottom: -5px;
+            content: "";
+            position: absolute;
+            width: $side_lenght;
+            height: $side_lenght;
+            background: index.$wine
+        }
+    }
+
+}
+
+.addToCart {
+    padding: 10px 25px;
+    background: index.$red100;
+    color: white;
+    font-weight: 700;
+}
+
+.text {
+    margin-bottom: 30px;
+    color: #232323;
+    font-size: 16px;
+    line-height: 170%;
+}
+
+.cost {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    * {
+        // color: index.$blue;
+    }
+    .int {
+        font-size: 32px;
+    }
+    .currency {
+        font-size: 26px;
+    }
+}
+
+
+
+@media (max-width: 850px) {
+    .product__info {
+        display: flex;
+        flex-direction: column !important;
+        width: 100%;
+        .img {
+            width: 100%;
+        }
+    }
+    .about {
+        width: 100%;
+    }
+}

@@ -25,13 +25,13 @@ export default function Header() {
                                 <Link to="/">Главная</Link>
                             </li>
                             <li>
-                                <Link to="/catalog">Каталог</Link>
+                                <Link to="/catalog">Доставка</Link>
                             </li>
                             <li>
                                 <Link to="/cart">Корзина</Link>
                             </li>
                             <li>
-                                <Link to="/contacts">Контакты</Link>
+                                <Link to="/">Контакты</Link>
                             </li>
                         </ul>
                     </nav>

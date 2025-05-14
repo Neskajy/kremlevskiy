@@ -1,6 +1,7 @@
 import s from "./Card.module.scss";
 import { cartContext } from "../../contexts/context";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 export default function Card({card}) {
     const {cart, setCart} = useContext(cartContext);
@@ -23,9 +24,11 @@ export default function Card({card}) {
     return (
         <>
             <div className={s.Card} key={card.id}>
-                <div className={s.img}>
-                    <img src={card.img} alt="" />
-                </div>
+                <Link to={`/catalog/${card.id}`}>
+                    <div className={s.img}>
+                        <img src={card.img} alt="" />
+                    </div>
+                </Link>
                 <div className={s.container}>
                     <div className={s.name}>
                         { card.name.length > 21 ? card.name.slice(0,21) + "..." : card.name}

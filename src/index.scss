@@ -12,9 +12,12 @@
 
 button {
     cursor: pointer;
+    white-space: nowrap;
 }
 
 $red100: rgb(18, 1, 1);
+$wine: rgb(113, 0, 0);
+
 
 @mixin h2() {
     width: fit-content;
