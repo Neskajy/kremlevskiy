@@ -9,7 +9,7 @@ export default function Cart() {
     const [totalAmmount, setTotalAmmount] = useState(0);
 
 
-    function calculateAmount() {
+    function calculateAmmount() {
         let totalAmmou = 0;
         for (let i = 0; i < cart.length; i++) {
             totalAmmou += cart[i].cost * cart[i].count;
@@ -25,9 +25,9 @@ export default function Cart() {
     }
 
     useEffect(() => {
-        calculateAmount();
+        calculateAmmount();
         calculateCount();
-    }, []);
+    }, [cart]);
 
     return (
         <>
