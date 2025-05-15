@@ -31,6 +31,12 @@
         .for_slider {
             display: flex;
             justify-content: center;
+            @media (max-width: 410px) {
+                width: 100%;
+                .Slider {
+                    width: 100%;
+                }
+            }
         }
     }
     @media (max-width: 1350px) {

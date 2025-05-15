@@ -35,3 +35,7 @@ $wine: rgb(113, 0, 0);
         bottom: -20px;
     }
 }
+
+h1 {
+    font-size: clamp(3rem, 2.7114rem + 1.0738vw, 4rem);
+}

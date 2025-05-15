@@ -24,7 +24,6 @@
         }
         h1 {
             color: white;
-            font-size: 64px;
         }
         .description {
             color: white;
@@ -36,6 +35,10 @@
             // bottom: 10%;
             display: flex;
             gap: 10px;
+            @media (max-width: 450px) {
+                flex-direction: column;
+                gap: 20px;
+            }
             a {
                 .btnToBasket {
                     cursor: pointer;
